@@ -14,4 +14,5 @@
 
 @property MagicalCreature *creature;
 @property RootViewController *rootVC;
+@property NSMutableArray *accessoryArray;
 @end

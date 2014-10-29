@@ -7,13 +7,14 @@
 //
 
 #import "CreatureViewController.h"
-@interface CreatureViewController () <UITextFieldDelegate>
+@interface CreatureViewController () <UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (strong, nonatomic) IBOutlet UITextField *creatureTextField;
 
 @property (strong, nonatomic) IBOutlet UITextField *detailTextField;
 @property (strong, nonatomic) IBOutlet UILabel *detailLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView2;
 
 
 @end
@@ -30,6 +31,21 @@
     self.detailLabel.text = self.creature.detail;
     self.imageView.image = self.creature.image;
     
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 2;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UITableViewCell *cell = [self.tableView2 dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = self.accessoryArray[indexPath.row];
+    
+    return cell;
+
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -79,6 +95,7 @@
   
 
 }
+
 
 
 

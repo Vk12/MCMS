@@ -23,7 +23,7 @@
     MagicalCreature *dragon = [[MagicalCreature alloc] initWithName:@"Alexstrausa"];
     dragon.image = [UIImage imageNamed:@"dragon"];
     dragon.detail = [NSString stringWithFormat:@"dragon"];
-MagicalCreature *hobbit = [[MagicalCreature alloc]
+    MagicalCreature *hobbit = [[MagicalCreature alloc]
                                initWithName:@"Frodo"];
     hobbit.image = [UIImage imageNamed:@"hobbit"];
     hobbit.detail = [NSString stringWithFormat:@"hobbit"];

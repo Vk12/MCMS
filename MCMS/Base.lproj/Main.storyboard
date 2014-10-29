@@ -125,8 +125,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4IG-ug-RkF">
-                                <rect key="frame" x="16" y="112" width="288" height="296"/>
+                                <rect key="frame" x="16" y="112" width="288" height="258"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cXb-it-Kd6">
+                                <rect key="frame" x="16" y="378" width="288" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="30" id="MzV-hi-0ju">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MzV-hi-0ju" id="DOt-dz-Son">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zB2-te-4Zh" id="XDv-59-dTp"/>
+                                    <outlet property="delegate" destination="zB2-te-4Zh" id="n79-PW-U8G"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -143,6 +160,7 @@
                         <outlet property="detailTextField" destination="LnZ-7T-9Hx" id="q7h-aK-brf"/>
                         <outlet property="editButton" destination="80z-Hm-2sV" id="r9k-hT-5LP"/>
                         <outlet property="imageView" destination="4IG-ug-RkF" id="E4o-R2-Ubf"/>
+                        <outlet property="tableView2" destination="cXb-it-Kd6" id="2bu-KN-8fS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkC-ek-kXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
