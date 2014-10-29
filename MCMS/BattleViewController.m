@@ -41,9 +41,9 @@
 
 }
 
-- (void) viewWillDisappear:(BOOL)animated
-{
-    self.fightArray = [@[] mutableCopy];
-}
+//- (void) viewWillDisappear:(BOOL)animated
+//{
+//    self.fightArray = [@[] mutableCopy];
+//}
 
 @end
