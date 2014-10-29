@@ -30,7 +30,7 @@
     hobbit.detail = [NSString stringWithFormat:@"hobbit"];
     hobbit.accessories = [@[@"80", @"6"] mutableCopy];
 
-    MagicalCreature *elf = [[MagicalCreature alloc] initWithName:@"Legolas"];
+    MagicalCreature *elf = [[MagicalCreature alloc] initWithName:@"Nicolas"];
     elf.image = [UIImage imageNamed:@"elf"];
     elf.detail = [NSString stringWithFormat:@"elf"];
     elf.accessories = [@[@"60", @"10"] mutableCopy];

@@ -19,7 +19,8 @@
     NSString *currentImage = [NSString stringWithFormat:@"%@",self.detail];
     self.image = [UIImage imageNamed:currentImage];
     NSString *damage = [NSString stringWithFormat:@"%d",arc4random_uniform(10) + 1];
-    self.accessories = [@[@"100", damage] mutableCopy];
+    NSString *health = [NSString stringWithFormat:@"%d",arc4random_uniform(151) + 50];
+    self.accessories = [@[health, damage] mutableCopy];
     return self;
 }
 @end

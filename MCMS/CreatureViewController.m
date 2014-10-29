@@ -86,6 +86,12 @@
             self.detailTextField.enabled = NO;
             self.creature.name = self.creatureTextField.text;
             self.navigationItem.title = self.creatureTextField.text;
+            self.detailLabel.text = self.creature.detail;
+//            NSString *imgText = @"elf";
+//            self.creature.image = [UIImage imageNamed:@"elf"];
+            [self.imageView setImage:[UIImage imageNamed:self.creature.detail]];
+
+
 //            [self.creatureTextField resignFirstResponder];
             self.creatureTextField.text = @"";
             self.creatureTextField.enabled = NO;
