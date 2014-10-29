@@ -9,9 +9,12 @@
 #import "RootViewController.h"
 #import "MagicalCreature.h"
 #import "CreatureViewController.h"
+#import "BattleViewController.h"
+
 @interface RootViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
+@property NSMutableArray *fightGroupArray;
 
 @end
 
@@ -37,11 +40,14 @@
 
     
     self.creatures = [@[dragon,hobbit,elf] mutableCopy];
+    self.fightGroupArray = [NSMutableArray array];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tableView reloadData];
+
 }
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -54,6 +60,7 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = [self.creatures[indexPath.row] name];
     cell.detailTextLabel.text = [self.creatures[indexPath.row] detail];
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
@@ -71,23 +78,62 @@
     
    
 }
+- (IBAction)onButtonPressedFight:(UIButton *)sender
+{
+
+}
+
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self addButton:nil];
     return YES;
 }
+- (IBAction)onRightSwipeSelect:(UISwipeGestureRecognizer *)swipe
+{
+    CGPoint point = [swipe locationInView:self.tableView];
+    NSIndexPath *index = [self.tableView indexPathForRowAtPoint:point];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:index];
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight)
+    {
+         MagicalCreature *fighter = [self.creatures objectAtIndex:index.row];
+if (cell.backgroundColor == [UIColor clearColor])
+{
+    cell.backgroundColor = [UIColor redColor];
 
+    [self.fightGroupArray addObject:fighter];
 
+}else
+{
+    cell.backgroundColor = [UIColor clearColor];
+    [self.fightGroupArray removeObject:fighter];
+}
+
+}
+
+     }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([segue.identifier isEqualToString:@"ShowCreatureSegue"])
+    {
     CreatureViewController *vc = segue.destinationViewController;
     NSInteger rowNumber = [self.tableView indexPathForSelectedRow].row;
     MagicalCreature *theCreature = [self.creatures objectAtIndex:rowNumber];
     vc.creature =theCreature;
     
     vc.navigationItem.title =[self.creatures[rowNumber] name];
+    } else
+    {
+
+
+BattleViewController *vc2 =segue.destinationViewController;
+        vc2.fightArray = self.fightGroupArray;
+    }
+    
 //    vc.detailLabel.text = [self.creatures[rowNumber] detail];
 }
+
+
 
 
 
