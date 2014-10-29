@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *detailTextField;
 @property (strong, nonatomic) IBOutlet UILabel *detailLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 
 @end
@@ -27,6 +28,7 @@
     self.creatureTextField.enabled = NO;
     self.detailTextField.enabled = NO;
     self.detailLabel.text = self.creature.detail;
+    self.imageView.image = self.creature.image;
     
 }
 

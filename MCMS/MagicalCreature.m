@@ -15,7 +15,9 @@
 {
     self = [super init];
     self.name = name;
-    self.detail = [NSString stringWithFormat:@"Champion %@",name];
+    self.detail = [NSString stringWithFormat:@"unknown"];
+    NSString *currentImage = [NSString stringWithFormat:@"%@",self.detail];
+    self.image = [UIImage imageNamed:currentImage];
     return self;
 }
 @end

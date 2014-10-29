@@ -142,6 +142,7 @@
                         <outlet property="detailLabel" destination="Ll0-E9-n53" id="4je-Ye-XVm"/>
                         <outlet property="detailTextField" destination="LnZ-7T-9Hx" id="q7h-aK-brf"/>
                         <outlet property="editButton" destination="80z-Hm-2sV" id="r9k-hT-5LP"/>
+                        <outlet property="imageView" destination="4IG-ug-RkF" id="E4o-R2-Ubf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkC-ek-kXm" userLabel="First Responder" sceneMemberID="firstResponder"/>

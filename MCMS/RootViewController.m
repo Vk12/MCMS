@@ -21,8 +21,17 @@
 {
     [super viewDidLoad];
     MagicalCreature *dragon = [[MagicalCreature alloc] initWithName:@"Alexstrausa"];
-    MagicalCreature *hobbit = [[MagicalCreature alloc] initWithName:@"Frodo"];
+    dragon.image = [UIImage imageNamed:@"dragon"];
+    dragon.detail = [NSString stringWithFormat:@"dragon"];
+MagicalCreature *hobbit = [[MagicalCreature alloc]
+                               initWithName:@"Frodo"];
+    hobbit.image = [UIImage imageNamed:@"hobbit"];
+    hobbit.detail = [NSString stringWithFormat:@"hobbit"];
+
     MagicalCreature *elf = [[MagicalCreature alloc] initWithName:@"Legolas"];
+    elf.image = [UIImage imageNamed:@"elf"];
+    elf.detail = [NSString stringWithFormat:@"elf"];
+
     
     self.creatures = [@[dragon,hobbit,elf] mutableCopy];
 }
