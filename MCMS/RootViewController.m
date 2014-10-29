@@ -96,6 +96,9 @@
 {
     CGPoint point = [swipe locationInView:self.tableView];
     NSIndexPath *index = [self.tableView indexPathForRowAtPoint:point];
+
+    //Be careful with the indexPath = NIL on the inexisting cell!!!
+    
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:index];
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight)
     {
