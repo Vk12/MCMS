@@ -15,6 +15,7 @@
 {
     self = [super init];
     self.name = name;
+    self.detail = [NSString stringWithFormat:@"Champion %@",name];
     return self;
 }
 @end
