@@ -30,6 +30,7 @@
     self.detailTextField.enabled = NO;
     self.detailLabel.text = self.creature.detail;
     self.imageView.image = self.creature.image;
+    self.accessoryArray = self.creature.accessories;
     
 }
 
@@ -41,9 +42,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    UITableViewCell *cell = [self.tableView2 dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView2 dequeueReusableCellWithIdentifier:@"cell2" forIndexPath:indexPath];
     cell.textLabel.text = self.accessoryArray[indexPath.row];
-    
+
+
+//    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    cell.textLabel.text = [self.creatures[indexPath.row] name];
+//    cell.detailTextLabel.text = [self.creatures[indexPath.row] detail];
+//    return cell;
+
     return cell;
 
 }

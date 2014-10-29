@@ -23,14 +23,17 @@
     MagicalCreature *dragon = [[MagicalCreature alloc] initWithName:@"Alexstrausa"];
     dragon.image = [UIImage imageNamed:@"dragon"];
     dragon.detail = [NSString stringWithFormat:@"dragon"];
-    MagicalCreature *hobbit = [[MagicalCreature alloc]
-                               initWithName:@"Frodo"];
+    dragon.accessories = [@[@"200", @"3"] mutableCopy];
+
+    MagicalCreature *hobbit = [[MagicalCreature alloc] initWithName:@"Frodo"];
     hobbit.image = [UIImage imageNamed:@"hobbit"];
     hobbit.detail = [NSString stringWithFormat:@"hobbit"];
+    hobbit.accessories = [@[@"80", @"6"] mutableCopy];
 
     MagicalCreature *elf = [[MagicalCreature alloc] initWithName:@"Legolas"];
     elf.image = [UIImage imageNamed:@"elf"];
     elf.detail = [NSString stringWithFormat:@"elf"];
+    elf.accessories = [@[@"60", @"10"] mutableCopy];
 
     
     self.creatures = [@[dragon,hobbit,elf] mutableCopy];
@@ -58,7 +61,7 @@
 {
     if (![self.textField.text isEqualToString:@""])
     {
-        MagicalCreature *addCreature = [[MagicalCreature alloc]init];
+        MagicalCreature *addCreature = [[MagicalCreature alloc] initWithName:self.textField.text];
         addCreature.name = self.textField.text;
         [self.creatures addObject:addCreature];
         [self.tableView reloadData];

@@ -18,6 +18,8 @@
     self.detail = [NSString stringWithFormat:@"unknown"];
     NSString *currentImage = [NSString stringWithFormat:@"%@",self.detail];
     self.image = [UIImage imageNamed:currentImage];
+    NSString *damage = [NSString stringWithFormat:@"%d",arc4random_uniform(10) + 1];
+    self.accessories = [@[@"100", damage] mutableCopy];
     return self;
 }
 @end
