@@ -44,6 +44,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     self.fightGroupArray = [@[] mutableCopy];
 
     [self.tableView reloadData];
